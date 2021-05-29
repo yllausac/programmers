@@ -9,3 +9,4 @@ def solution(citations):
 
 
 print(solution([20, 19, 18, 1]))
+
