@@ -1,5 +1,4 @@
 def solution(str1, str2):
-    answer = 0
     str1 = list(str1.lower())  # 소문자로 변환
     str2 = list(str2.lower())
 
