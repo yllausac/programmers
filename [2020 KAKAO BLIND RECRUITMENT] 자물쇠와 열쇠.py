@@ -1,12 +1,12 @@
 def solution(key, lock):
     start = len(key) - 1
     end = start + len(lock)
-    expandSize = len(lock) + start * 2
+    graphsize = len(lock) + start * 2
 
     for i in range(0, 4):
         for k in range(end):
             for d in range(end):
-                if move(k, d, key, lock, expandSize, start, end):
+                if move(k, d, key, lock, graphsize, start, end):
                     return True
         key = turn(key)
 
@@ -23,17 +23,17 @@ def turn(key):
     return key
 
 
-def move(startX, startY, key, lock, expandSize, start, end):
-    expandList = [[0]*expandSize for _ in range(expandSize)]
+def move(X, Y, key, lock, graphsize, start, end):
+    graph = [[0] * graphsize for _ in range(graphsize)]
 
     for i in range(len(key)):
         for j in range(len(key)):
-            expandList[startX + i][startY + j] += key[i][j]
+            graph[X + i][Y + j] += key[i][j]
 
     for i in range(start, end):
         for j in range(start, end):
-            expandList[i][j] += lock[i - start][j - start]
-            if expandList[i][j] != 1:
+            graph[i][j] += lock[i - start][j - start]
+            if graph[i][j] != 1:
                 return False
     return True
 
