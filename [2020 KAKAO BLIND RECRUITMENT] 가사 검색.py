@@ -1,18 +1,21 @@
 def solution(words, queries):
     answer = []
+    key, value = [], []
+    for word in words:
+        key.append(list(word))
     for query in queries:
-        key = list(query)
+        value.append(list(query))
+
+    for item in value:
+        m = len(item)
         count = 0
-        for word in words:
-            lyrics = list(word)
-            if len(key) == len(lyrics):
-                match = 0
-                for i in range(len(key)):
-                    if key[i] == '?' or key[i] == lyrics[i]:
+        for target in key:
+            match = 0
+            if len(target) == m:
+                for i in range(m):
+                    if target[i] == item[i] or item[i] == '?':
                         match += 1
-                    else:
-                        break
-                if match == len(key):
+                if match == m:
                     count += 1
         answer.append(count)
     return answer
