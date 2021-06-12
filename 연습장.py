@@ -65,9 +65,9 @@ def solution(words, queries):
                     answer.append(cur.length[org_len])
                 except:
                     answer.append(0)
+    print(cnt_dict)
 
     return answer
-
 
 
 print(solution(["frodo", "front", "frost", "frozen", "frame", "kakao"], ["fro??", "????o", "fr???", "fro???", "pro?"]))
