@@ -1,4 +1,5 @@
 # 효율성 테스트 3문제 미통과
+# 단순 속도 차이인지 비교
 
 def solution(words, queries):
     answer = []
@@ -24,3 +25,4 @@ def solution(words, queries):
 
 
 print(solution(["frodo", "front", "frost", "frozen", "frame", "kakao"], ["fro??", "????o", "fr???", "fro???", "pro?"]))
+
