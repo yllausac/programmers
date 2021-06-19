@@ -18,7 +18,6 @@ def solution(n, weak, dist):
                 return
         print(table)
 
-
     return answer
 
 
