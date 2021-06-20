@@ -22,3 +22,6 @@ def solution(n, weak, dist):
 
 
 print(solution(12, [1, 3, 4, 9, 10], [3, 5, 7]))
+
+
+#정렬 후 탐색
